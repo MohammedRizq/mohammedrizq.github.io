@@ -1,7 +1,7 @@
 document.documentElement.classList.add("js");
 
 const supportedLanguages = ["en", "ar", "es", "fr", "id", "tr", "pt"];
-const playStoreUrl = "https://play.google.com/store/apps"; // Replace this with your full Google Play app URL.
+const playStoreUrl = "https://play.google.com/store/apps/details?id=com.mrizq.echo_path";
 
 function getPreferredLanguage() {
   const savedLanguage = localStorage.getItem("echoGateLanguage");
