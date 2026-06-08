@@ -259,3 +259,84 @@
 @media (max-width:560px){
   .showcase-card{border-radius:24px;padding:10px}.showcase-screen{border-radius:18px}.showcase-topline{padding-bottom:10px}.showcase-footer{padding-top:10px}.app-badge img{width:44px;height:44px}.mini-metrics{display:none}.video-poster strong{bottom:22px}.video-poster .play{width:70px;height:70px}
 }
+
+
+/* v8: YouTube opens externally + elegant image loading placeholders */
+.media-loading{position:relative;overflow:hidden}
+.image-loader{position:absolute;inset:0;display:grid;place-items:center;z-index:4;background:radial-gradient(circle at 50% 46%,rgba(63,233,255,.22),rgba(140,92,255,.08) 42%,rgba(3,7,22,.88));transition:opacity .45s ease,visibility .45s ease;pointer-events:none}
+.image-loader::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 25%,rgba(255,255,255,.12) 45%,transparent 65%);animation:loaderSweep 1.25s linear infinite}
+.image-loader span{width:54px;height:54px;border-radius:18px;border:1px solid rgba(63,233,255,.45);background:rgba(5,10,28,.62);box-shadow:0 0 32px rgba(63,233,255,.35), inset 0 0 18px rgba(63,233,255,.15);position:relative}
+.image-loader span::after{content:"";position:absolute;inset:14px;border-radius:9px;background:linear-gradient(135deg,var(--cyan),var(--violet));animation:loaderPulse 1.1s ease-in-out infinite}
+.load-fade{opacity:0;transition:opacity .5s ease,transform .7s ease,filter .7s ease}
+.media-loading.is-loaded .load-fade{opacity:1}
+.media-loading.is-loaded .image-loader{opacity:0;visibility:hidden}
+.video-poster{text-decoration:none}
+.video-poster .play{pointer-events:none}
+.video-poster strong{pointer-events:none;color:white}
+@keyframes loaderSweep{to{transform:translateX(120%)}}
+@keyframes loaderPulse{50%{transform:scale(.72);opacity:.55}}
+[data-theme="light"] .image-loader{background:radial-gradient(circle at 50% 46%,rgba(0,166,190,.22),rgba(72,63,220,.08) 42%,rgba(239,248,255,.9))}
+[data-theme="light"] .image-loader span{background:rgba(255,255,255,.72)}
+
+/* v9: YouTube is now an external CTA, not an embedded/player-looking section. */
+.btn-youtube{
+  position:relative;
+  gap:10px;
+  color:var(--text);
+  background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+  border-color:rgba(255,255,255,.16);
+  overflow:hidden;
+}
+.btn-youtube::before{
+  content:"▶";
+  display:inline-grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ff284f,#ff6a88);
+  color:white;
+  font-size:12px;
+  line-height:1;
+  box-shadow:0 0 24px rgba(255,40,79,.35);
+}
+.btn-youtube::after{
+  content:"";
+  position:absolute;
+  inset:-80% auto -80% -60%;
+  width:46%;
+  transform:rotate(18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent);
+  transition:transform .55s ease;
+}
+.btn-youtube:hover::after{transform:translateX(420%) rotate(18deg)}
+.btn-large{min-height:58px;padding-inline:26px}
+[data-theme="light"] .btn-youtube{
+  color:#10223e;
+  background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(241,246,255,.88));
+  border-color:rgba(21,51,91,.16);
+  box-shadow:0 14px 40px rgba(38,70,120,.12);
+}
+.trailer-cta-section{padding-top:28px;padding-bottom:52px}
+.trailer-strip{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:26px;
+  align-items:center;
+  padding:28px;
+  border:1px solid var(--line);
+  border-radius:32px;
+  background:
+    radial-gradient(circle at 8% 50%,rgba(63,233,255,.14),transparent 34%),
+    linear-gradient(135deg,var(--panel2),var(--panel));
+  box-shadow:var(--shadow);
+}
+.trailer-strip h2{font-size:clamp(28px,4vw,48px);margin-bottom:10px}
+.trailer-strip p:not(.eyebrow){color:var(--muted);font-size:17px;line-height:1.65;margin:0;max-width:720px}
+.download-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+@media (max-width:760px){
+  .trailer-strip{grid-template-columns:1fr;padding:22px;border-radius:26px;text-align:start}
+  .trailer-strip .btn{width:100%}
+  .download-actions{display:grid}
+  .download-actions .btn{width:100%}
+}
