@@ -1,6 +1,6 @@
 (function(){
   var supported=['en','ar','es','fr','id','tr','pt'];
-  var playStoreUrl='https://play.google.com/store/apps'; // Replace with your full Google Play app link.
+  var playStoreUrl='https://play.google.com/store/apps/details?id=com.mrizq.echo_path';
   function lang(){
     var saved=localStorage.getItem('echoGateLanguage');
     if(supported.indexOf(saved)>-1)return saved;
