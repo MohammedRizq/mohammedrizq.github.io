@@ -1,10 +1,158 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-  <title>Echo Gate Test</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Echo Gate — Echo-Based Puzzle Game</title>
+  <meta name="description" content="Echo Gate is a premium offline puzzle game where your past movements become part of the challenge. Download on Google Play." />
+  <meta name="theme-color" content="#070a18" />
+  <meta property="og:title" content="Echo Gate — Your past movements become the puzzle" />
+  <meta property="og:description" content="Plan your route, time your movement, and use your echo wisely across handcrafted puzzle rooms." />
+  <meta property="og:image" content="assets/feature-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
+  <link rel="icon" href="assets/favicon-64.png" sizes="64x64" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preload" href="assets/echo-gate-symbol.webp" as="image" />
+  <link rel="preload" href="assets/feature-image.webp" as="image" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Echo Gate website.</h1>
+  <div class="site-glow" aria-hidden="true"></div>
+  <header class="header" id="top">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Echo Gate home">
+        <img src="assets/favicon-64.png" width="42" height="42" alt="" />
+        <span>Echo Gate</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navPanel" data-menu-toggle>
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+
+      <div class="nav-panel" id="navPanel" data-nav-panel>
+        <a href="#game" data-i18n="navGame">Game</a>
+        <a href="#features" data-i18n="navFeatures">Features</a>
+        <a href="#trailer" data-i18n="navTrailer">Trailer</a>
+        <a href="#download" data-i18n="navDownload">Download</a>
+        <div class="controls">
+          <label class="sr-only" for="languageSelect">Language</label>
+          <select id="languageSelect" class="select" aria-label="Language selector">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="pt">Português</option>
+            <option value="id">Indonesia</option>
+            <option value="tr">Türkçe</option>
+          </select>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark and light mode">
+            <span class="sun">☀</span><span class="moon">☾</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell" id="game">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="eyebrow">Offline puzzle game for Android</p>
+        <h1 data-i18n="heroTitle">Your past movements become the puzzle.</h1>
+        <p class="lead" data-i18n="heroText">Echo Gate is a unique puzzle game where your echo repeats the path you took after a short delay. Use it to press plates, open doors, block hazards, and solve handcrafted rooms — but avoid touching your echo.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mrizq.echo_path" target="_blank" rel="noopener" data-i18n="downloadNow">Download on Google Play</a>
+          <a class="btn btn-ghost" href="#trailer" data-i18n="watchTrailer">Watch trailer</a>
+        </div>
+        <div class="stats" aria-label="Game highlights">
+          <div><strong data-i18n="statOffline">Offline</strong><span data-i18n="statOfflineSub">play anywhere</span></div>
+          <div><strong data-i18n="statRooms">Handcrafted</strong><span data-i18n="statRoomsSub">puzzle rooms</span></div>
+          <div><strong data-i18n="statControls">3 Controls</strong><span data-i18n="statControlsSub">choose your layout</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art reveal" aria-label="Echo Gate artwork">
+        <div class="showcase-card">
+          <div class="showcase-glow" aria-hidden="true"></div>
+          <div class="showcase-topline">
+            <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+            <span data-i18n="tagPlan">Plan every move</span>
+          </div>
+          <div class="showcase-screen">
+            <picture>
+              <source srcset="assets/feature-image.webp" type="image/webp" />
+              <img src="assets/feature-image.png" alt="Echo Gate gameplay preview showing echo path, plates, doors, and hazards" width="1600" height="900" />
+            </picture>
+          </div>
+          <div class="showcase-footer">
+            <div class="app-badge">
+              <img src="assets/favicon-64.png" alt="" width="52" height="52" />
+              <div><strong>Echo Gate</strong><small data-i18n="tagEcho">Echo delay</small></div>
+            </div>
+            <div class="mini-metrics" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="features">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="featuresEyebrow">Built for thoughtful players</p>
+        <h2 data-i18n="featuresTitle">A clean puzzle experience with premium game feel.</h2>
+        <p data-i18n="featuresIntro">Plan, move, wait, and use your echo wisely as each room introduces new timing and logic challenges.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature reveal"><span>01</span><h3 data-i18n="f1Title">Echo-based gameplay</h3><p data-i18n="f1Text">Your previous path repeats after a delay, turning every movement into part of the solution.</p></article>
+        <article class="feature reveal"><span>02</span><h3 data-i18n="f2Title">Handcrafted rooms</h3><p data-i18n="f2Text">Solve focused puzzle rooms built around timing, logic, plates, doors, and hazards.</p></article>
+        <article class="feature reveal"><span>03</span><h3 data-i18n="f3Title">Flexible controls</h3><p data-i18n="f3Text">Choose joystick, arrows, or split arrows for the play style that feels best.</p></article>
+        <article class="feature reveal"><span>04</span><h3 data-i18n="f4Title">Difficulty options</h3><p data-i18n="f4Text">Play relaxed or challenge yourself with tougher puzzle timing.</p></article>
+        <article class="feature reveal"><span>05</span><h3 data-i18n="f5Title">Progression rewards</h3><p data-i18n="f5Text">Earn stars, unlock rewards, upgrade skills, and continue through new mechanics.</p></article>
+        <article class="feature reveal"><span>06</span><h3 data-i18n="f6Title">Offline and multilingual</h3><p data-i18n="f6Text">Enjoy offline puzzle gameplay with support for multiple languages.</p></article>
+      </div>
+    </section>
+
+    <section class="section trailer-section shell" id="trailer">
+      <div class="section-head reveal">
+        <p class="eyebrow" data-i18n="trailerEyebrow">Game trailer</p>
+        <h2 data-i18n="trailerTitle">See the echo mechanic in motion.</h2>
+        <p data-i18n="trailerText">Watch how your route becomes a delayed echo that can help solve a room — or become the obstacle.</p>
+      </div>
+      <div class="video-shell reveal" data-video>
+        <button class="video-poster" type="button" data-load-video aria-label="Play Echo Gate trailer">
+          <img src="assets/feature-image.webp" alt="Echo Gate trailer preview showing gameplay mechanics" loading="lazy" />
+          <span class="play"><span>▶</span></span>
+          <strong data-i18n="playTrailer">Play trailer</strong>
+        </button>
+      </div>
+    </section>
+
+    <section class="section download-section shell" id="download">
+      <div class="download-card reveal">
+        <div class="download-media">
+          <img src="assets/echo-gate-logo.webp" alt="Echo Gate logo" loading="lazy" />
+        </div>
+        <div class="download-copy">
+          <p class="eyebrow" data-i18n="downloadEyebrow">Available now</p>
+          <h2 data-i18n="downloadTitle">Download Echo Gate on Google Play.</h2>
+          <p data-i18n="downloadText">Start solving handcrafted echo puzzles today. Offline gameplay, multiple control layouts, stars, rewards, skills, and unlockable progression.</p>
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.mrizq.echo_path" target="_blank" rel="noopener" data-i18n="downloadNow">Download on Google Play</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div>
+      <strong>Echo Gate</strong>
+      <p>Mohammed A Rizq</p>
+      <p><a href="mailto:mrizq42@gmail.com">mrizq42@gmail.com</a></p>
+    </div>
+    <p>© <span id="year"></span> Echo Gate. <span data-i18n="rights">All rights reserved.</span></p>
+  </footer>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
-<!-- redeploy -->
