@@ -2,9 +2,6 @@
 
 Static GitHub Pages landing page for Echo Gate.
 
-## Deploy
-Upload all files in this folder to the root of your GitHub Pages repository and commit.
-
 ## v5 updates
 - Premium redesigned hero artwork card
 - Default language follows the visitor browser/OS language when it matches English, Arabic, Spanish, French, Portuguese, Indonesian, or Turkish; otherwise English
